@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800;900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -9,9 +11,9 @@ html {
 }
 
 body {
-  background: #030303;
-  color: white;
-  font-family: Inter, system-ui, Arial, sans-serif;
+  background: #fff;
+  color: #111;
+  font-family: "Inter", sans-serif;
   overflow-x: hidden;
 }
 
@@ -20,163 +22,167 @@ a {
   text-decoration: none;
 }
 
-.app {
-  min-height: 100vh;
-  background:
-    radial-gradient(circle at 80% 10%, rgba(255, 0, 0, 0.22), transparent 28%),
-    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.06), transparent 25%),
-    #030303;
+img {
+  display: block;
 }
 
-.cursorGlow {
-  position: fixed;
-  inset: auto;
-  width: 420px;
-  height: 420px;
-  background: rgba(255, 0, 0, 0.08);
-  filter: blur(80px);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 0;
-}
+/* NAVBAR */
 
 .navbar {
   position: fixed;
   top: 0;
+  z-index: 1000;
   width: 100%;
   padding: 18px 7%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(3, 3, 3, 0.65);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(18px);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  z-index: 20;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-.logo {
+.brand img {
   width: 110px;
-  height: auto;
 }
 
 .nav {
   display: flex;
   gap: 32px;
+  align-items: center;
 }
 
 .nav a {
-  font-weight: 700;
-  color: #ddd;
-  transition: 0.3s;
+  color: #222;
+  font-weight: 800;
+  transition: color 0.3s;
 }
 
-.nav a:hover {
-  color: #ff2020;
+.nav a:hover,
+.nav a.active {
+  color: #c40000;
 }
 
 .menuBtn {
   display: none;
-  background: none;
-  color: white;
-  border: 0;
+  border: none;
+  background: transparent;
   font-size: 2rem;
+  cursor: pointer;
 }
 
-.hero {
-  min-height: 100vh;
-  padding: 150px 7% 80px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  position: relative;
-  gap: 40px;
-}
+/* SHARED */
 
-.heroText {
-  position: relative;
-  z-index: 2;
-}
-
-.eyebrow,
-.sectionTag {
-  color: #ff2020;
+.eyebrow {
+  margin-bottom: 18px;
+  color: #c40000;
+  font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 3px;
-  font-weight: 900;
-  margin-bottom: 18px;
 }
 
-.hero h1 {
-  font-size: clamp(3.6rem, 8vw, 8rem);
-  line-height: 0.9;
-  font-weight: 950;
+.hero h1,
+.pageContent h1,
+.homeServicesHeader h2,
+.aboutHome h2,
+.homeCta h2 {
+  font-size: clamp(3rem, 6vw, 6.5rem);
+  line-height: 0.95;
   letter-spacing: -4px;
 }
 
-.hero h1 span {
-  display: block;
-  color: #ff2020;
+.heroDesc,
+.lead,
+.homeServicesHeader p,
+.aboutHome p,
+.homeCta p,
+.card p,
+.aboutGrid p,
+.tileProductCard p {
+  color: #555;
+  line-height: 1.75;
+  font-size: 1.05rem;
 }
 
-.heroDesc {
-  margin-top: 30px;
-  max-width: 650px;
-  color: #d4d4d4;
-  font-size: 1.15rem;
-  line-height: 1.8;
-}
-
-.heroBtns {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-  margin-top: 38px;
+.card,
+.stats div,
+.aboutGrid div,
+.tileProductCard,
+.contactDetails div,
+.contactForm {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.08);
 }
 
 .primaryBtn,
 .ghostBtn {
+  display: inline-block;
   padding: 16px 28px;
   border-radius: 999px;
   font-weight: 900;
   transition: 0.3s;
-  display: inline-block;
 }
 
 .primaryBtn {
-  background: #ff2020;
+  background: #c40000;
   color: white;
-  box-shadow: 0 0 35px rgba(255, 32, 32, 0.4);
+  box-shadow: 0 20px 40px rgba(196, 0, 0, 0.25);
 }
 
-.primaryBtn:hover {
+.primaryBtn:hover,
+.ghostBtn:hover {
   transform: translateY(-4px);
-  background: #ff4646;
 }
 
 .ghostBtn {
-  border: 1px solid rgba(255,255,255,0.18);
-  background: rgba(255,255,255,0.04);
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-.ghostBtn:hover {
-  border-color: #ff2020;
-  transform: translateY(-4px);
+/* HERO */
+
+.hero {
+  min-height: 100vh;
+  padding: 150px 7% 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+  background:
+    radial-gradient(circle at 80% 15%, rgba(196, 0, 0, 0.12), transparent 30%),
+    radial-gradient(circle at 20% 60%, rgba(216, 195, 165, 0.35), transparent 28%),
+    #f7f5f1;
+}
+
+.heroText {
+  max-width: 760px;
+}
+
+.heroDesc {
+  margin-top: 28px;
+}
+
+.heroBtns {
+  margin-top: 38px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
 }
 
 .canvasWrap {
   height: 560px;
-  position: relative;
-  z-index: 1;
   border-radius: 40px;
-  background:
-    linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
-  border: 1px solid rgba(255,255,255,0.1);
   overflow: hidden;
-  box-shadow: inset 0 0 80px rgba(255,0,0,0.08);
+  background: linear-gradient(145deg, #fff, rgba(216, 195, 165, 0.3));
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.12);
 }
 
+/* STATS */
+
 .stats {
-  padding: 60px 7%;
+  padding: 70px 7%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
@@ -184,134 +190,240 @@ a {
 
 .stats div {
   padding: 42px;
-  border-radius: 28px;
-  background: rgba(255,255,255,0.045);
-  border: 1px solid rgba(255,255,255,0.08);
-  backdrop-filter: blur(12px);
   text-align: center;
+  border-radius: 28px;
 }
 
 .stats h2 {
+  color: #c40000;
   font-size: 4rem;
-  color: #ff2020;
 }
 
 .stats p {
-  color: #cfcfcf;
+  margin-top: 10px;
+  color: #555;
+  font-weight: 700;
 }
 
-.section,
-.platten,
-.contact {
+/* HOME */
+
+.homeServices,
+.aboutHome {
   padding: 120px 7%;
 }
 
-.section h2,
-.platten h2,
-.contact h2,
-.premium h2 {
-  font-size: clamp(2.5rem, 5vw, 5.5rem);
-  line-height: 1;
-  margin-bottom: 50px;
+.homeServicesHeader {
+  max-width: 900px;
+  margin-bottom: 60px;
+}
+
+.cards,
+.aboutGrid,
+.sortimentGrid,
+.projectGrid {
+  display: grid;
+  gap: 24px;
 }
 
 .cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 26px;
-  perspective: 1000px;
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .card {
-  padding: 38px;
-  min-height: 260px;
+  padding: 34px;
   border-radius: 30px;
-  background:
-    linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.025));
-  border: 1px solid rgba(255,255,255,0.08);
-  transform-style: preserve-3d;
+  transition: border 0.3s;
 }
 
-.card span {
-  color: #ff2020;
-  font-weight: 950;
-  font-size: 2.5rem;
-}
 
 .card h3 {
-  margin: 24px 0 14px;
+  margin-bottom: 14px;
+  color: #c40000;
+  font-size: 1.45rem;
+  font-weight: 800;
+}
+
+.aboutHome {
+  background: white;
+}
+
+.aboutGrid {
+  margin-top: 55px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.aboutGrid div {
+  padding: 38px;
+  border-radius: 30px;
+}
+
+.aboutGrid h3 {
+  margin-bottom: 14px;
+  color: #c40000;
   font-size: 1.6rem;
 }
 
-.card p {
-  color: #c9c9c9;
-  line-height: 1.7;
-}
-
-.platten {
-  display: grid;
-  grid-template-columns: 1fr 0.8fr;
-  gap: 50px;
+.homeCta {
+  margin: 0 7% 100px;
+  padding: 55px;
+  border-radius: 40px;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  background: #080808;
+  gap: 40px;
+  background:
+    radial-gradient(circle at 85% 20%, rgba(196, 0, 0, 0.2), transparent 30%),
+    #111;
+  color: white;
 }
 
-.platten p {
-  color: #d0d0d0;
-  line-height: 1.8;
+.homeCta p {
+  color: #ddd;
   max-width: 760px;
 }
 
-.glassBox {
-  padding: 48px;
-  border-radius: 34px;
-  background:
-    linear-gradient(145deg, rgba(255,32,32,0.18), rgba(255,255,255,0.04));
-  border: 1px solid rgba(255,255,255,0.12);
-  backdrop-filter: blur(20px);
+/* PAGES */
+
+.pageContent {
+  min-height: 100vh;
+  padding: 150px 7% 100px;
 }
 
-.glassBox h3 {
-  font-size: 2.2rem;
-  margin-bottom: 18px;
-}
-
-.glassBox .primaryBtn {
+.lead {
+  max-width: 760px;
   margin-top: 28px;
 }
 
-.premium {
-  min-height: 520px;
-  padding: 120px 7%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background:
-    linear-gradient(rgba(0,0,0,0.58), rgba(0,0,0,0.9)),
-    url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop");
-  background-size: cover;
-  background-position: center;
+/* SORTIMENT */
+
+.sortimentGrid {
+  margin-top: 65px;
+  grid-template-columns: repeat(3, 1fr);
 }
 
-.premium p {
-  max-width: 700px;
-  color: #ddd;
-  font-size: 1.2rem;
-  line-height: 1.8;
+.tileProductCard {
+  overflow: hidden;
+  border-radius: 32px;
 }
 
-.contact {
+.tileProductCard img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+.tileProductCard div {
+  padding: 28px;
+}
+
+.tileProductCard h3 {
+  margin-bottom: 12px;
+  color: #c40000;
+  font-size: 1.5rem;
+}
+
+.tileProductCard p {
+  margin-bottom: 18px;
+}
+
+.tileProductCard span {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: #f1ebe3;
+  color: #c40000;
+  font-weight: 900;
+  font-size: 0.85rem;
+}
+
+/* PROJEKTE */
+
+.projectGrid {
+  margin-top: 65px;
   display: grid;
-  grid-template-columns: 0.8fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.projectCard {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 28px;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.1);
+}
+
+.projectCard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.projectOverlay {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 22px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+  color: white;
+}
+
+.projectOverlay span {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.projectOverlay h3 {
+  margin-bottom: 8px;
+  font-size: 1.35rem;
+}
+
+.projectOverlay p {
+  color: #e6e6e6;
+  line-height: 1.5;
+  font-size: 0.92rem;
+}
+
+/* KONTAKT */
+
+.contactPage {
+  display: grid;
+  grid-template-columns: 1fr 0.85fr;
   gap: 50px;
+  align-items: start;
 }
 
-.contact p {
-  color: #d0d0d0;
-  line-height: 1.8;
+.contactDetails {
+  margin-top: 45px;
+  display: grid;
+  gap: 16px;
 }
 
-form {
+.contactDetails div,
+.contactForm {
+  padding: 24px;
+  border-radius: 26px;
+}
+
+.contactDetails strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #c40000;
+}
+
+.contactDetails span,
+.contactDetails a {
+  display: block;
+  color: #222;
+  font-weight: 700;
+  line-height: 1.7;
+}
+
+.contactForm {
   display: grid;
   gap: 18px;
 }
@@ -321,9 +433,9 @@ textarea {
   width: 100%;
   padding: 18px;
   border-radius: 18px;
-  border: 1px solid rgba(255,255,255,0.08);
-  background: rgba(255,255,255,0.05);
-  color: white;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: white;
+  font-family: inherit;
   font-size: 1rem;
 }
 
@@ -333,33 +445,54 @@ textarea {
 }
 
 button {
+  border: none;
   padding: 18px;
   border-radius: 999px;
-  border: 0;
-  background: #ff2020;
+  background: #c40000;
   color: white;
   font-weight: 900;
   font-size: 1rem;
   cursor: pointer;
 }
 
-@media (max-width: 1000px) {
+button:hover {
+  background: #9e0000;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1100px) {
   .hero,
-  .platten,
-  .contact {
+  .contactPage {
     grid-template-columns: 1fr;
   }
 
-  .cards {
+  .cards,
+  .sortimentGrid,
+  .projectGrid,
+  .aboutGrid {
     grid-template-columns: repeat(2, 1fr);
   }
 
   .canvasWrap {
-    height: 420px;
+    height: 430px;
+  }
+
+  .homeCta {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 720px) {
+  .navbar {
+    padding: 16px 5%;
+  }
+
+  .brand img {
+    width: 100px;
+  }
+
   .menuBtn {
     display: block;
   }
@@ -371,22 +504,58 @@ button {
     right: 5%;
     display: none;
     flex-direction: column;
+    align-items: flex-start;
     padding: 24px;
     border-radius: 24px;
-    background: #111;
+    background: white;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.12);
   }
 
   .nav.open {
     display: flex;
   }
 
-  .hero h1 {
-    font-size: 3.5rem;
+  .hero,
+  .pageContent,
+  .homeServices,
+  .aboutHome {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .hero {
+    padding-top: 135px;
+  }
+
+  .hero h1,
+  .pageContent h1,
+  .homeServicesHeader h2,
+  .aboutHome h2,
+  .homeCta h2 {
+    font-size: 3.1rem;
     letter-spacing: -2px;
   }
 
-  .stats,
-  .cards {
+  .cards,
+  .sortimentGrid,
+  .projectGrid,
+  .aboutGrid,
+  .stats {
     grid-template-columns: 1fr;
+  }
+
+  .homeCta {
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 38px;
+  }
+
+  .canvasWrap {
+    height: 360px;
+  }
+
+  .projectCard,
+  .projectCard img {
+    min-height: 340px;
   }
 }
